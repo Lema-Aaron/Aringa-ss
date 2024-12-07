@@ -6,8 +6,8 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { BookOpen, FlaskRoundIcon as Flask, Globe, PaintbrushIcon as PaintBrush, GraduationCap, Users, Trophy, Calendar, Microscope, Calculator, BookOpenCheck, Music, Globe2, Code } from 'lucide-react'
-import { FadeIn, ScaleIn, FloatingElement, ParallaxScroll } from '@/components/animations'
+import { BookOpen, PaintbrushIcon as PaintBrush, GraduationCap, Users, Trophy, Calendar, Microscope, Calculator, BookOpenCheck, Globe2, Code } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/app/components/ui/avatar'
 
 const departments = [
   {
@@ -62,6 +62,27 @@ const topStudents = [
   { name: "Bob Williams", class: "Senior Four", photo: "/placeholder.svg?height=150&width=150&text=Bob", color: "Yellow" },
   { name: "Eva Brown", class: "Senior Five", photo: "/placeholder.svg?height=150&width=150&text=Eva", color: "Purple" },
   { name: "Michael Davis", class: "Senior Six", photo: "/placeholder.svg?height=150&width=150&text=Michael", color: "Orange" },
+]
+
+const testimonials = [
+  {
+    name: 'John Doe',
+    role: 'Parent',
+    image: '/placeholder.svg?height=100&width=100',
+    content: 'Aringa Secondary School has provided an excellent education for my child. The teachers are dedicated and the facilities are top-notch.',
+  },
+  {
+    name: 'Jane Smith',
+    role: 'Alumni',
+    image: '/placeholder.svg?height=100&width=100',
+    content: 'My years at Aringa Secondary School prepared me well for university and beyond. I\'m grateful for the strong foundation I received here.',
+  },
+  {
+    name: 'David Johnson',
+    role: 'Current Student',
+    image: '/placeholder.svg?height=100&width=100',
+    content: 'I love the diverse range of activities and clubs available at Aringa. It\'s helped me discover new interests and make great friends.',
+  },
 ]
 
 const fadeInUpVariants = {
@@ -177,14 +198,14 @@ export default function AcademicsPage() {
                 ))}
               </TabsList>
             </motion.div>
-            {departments.map((dept, index) => (
+            {departments.map((dept, _index) => (
               <TabsContent key={dept.name} value={dept.name}>
                 <motion.div
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUpVariants}
-                  transition={{ duration: 0.5, delay: 0.1 }}
+                  transition={{ duration: 0.5, delay: 0.1 * _index }}
                 >
                   <Card>
                     <CardHeader>
@@ -243,7 +264,7 @@ export default function AcademicsPage() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {topStudents.map((student, index) => (
+            {topStudents.map((student, _index) => (
               <motion.div
                 key={student.name}
                 variants={slideInVariants}
@@ -255,7 +276,7 @@ export default function AcademicsPage() {
                     <motion.div
                       className="relative h-32 w-32 mx-auto"
                       whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.8 }}
+                      transition={{ duration: 0.8 *_index}}
                     >
                       <Image
                         src={student.photo}
@@ -304,7 +325,7 @@ export default function AcademicsPage() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {features.map((feature, index) => (
+            {features.map((feature, _index) => (
               <motion.div
                 key={feature.title}
                 variants={slideInVariants}
@@ -317,7 +338,7 @@ export default function AcademicsPage() {
                       <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                        transition={{ type: "spring", stiffness: 260, damping: 20 *_index }}
                       >
                         <feature.icon className="w-8 h-8 text-primary" />
                       </motion.div>
@@ -366,7 +387,7 @@ export default function AcademicsPage() {
                 title: "Online Learning Platforms",
                 description: "Benefit from our integrated online learning systems that complement classroom instruction and facilitate remote learning."
               }
-            ].map((resource, index) => (
+            ].map((resource) => (
               <motion.div
                 key={resource.title}
                 variants={slideInVariants}
@@ -384,6 +405,45 @@ export default function AcademicsPage() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4">What People Say</h2>
+            <p className="text-xl text-muted-foreground">Hear from our community about their experiences at Aringa Secondary School</p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="h-full">
+                  <CardContent className="p-6 flex flex-col items-center text-center">
+                    <Avatar className="w-24 h-24 mb-4">
+                      <AvatarImage src={testimonial.image} alt={testimonial.name} />
+                      <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                    </Avatar>
+                    <p className="mb-4 italic">&ldquo;{testimonial.content}&rdquo;</p>
+                    <div className="mt-auto">
+                      <p className="font-semibold">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

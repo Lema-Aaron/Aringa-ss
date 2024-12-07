@@ -10,28 +10,63 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="bg-primary text-primary-foreground shadow-md">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src="/placeholder.svg?height=40&width=40"
-            alt="Aringa Secondary School Logo"
-            width={40}
-            height={40}
-            className="rounded-full bg-white"
-          />
-          <span className="text-2xl font-bold">Aringa Secondary School</span>
+    <header className="bg-[#0088FF] text-white shadow-md">
+      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <Link href="/" className="flex items-center space-x-4">
+          <div className="relative w-12 h-12 bg-white rounded-full overflow-hidden flex items-center justify-center">
+            <Image
+              src="/placeholder.svg?height=48&width=48"
+              alt="Aringa Secondary School Logo"
+              width={48}
+              height={48}
+              className="object-cover"
+            />
+          </div>
+          <span className="text-2xl font-bold tracking-tight">Aringa Secondary School</span>
         </Link>
-        <nav className="hidden md:flex space-x-4">
-          <Link href="/" className="text-primary-foreground hover:text-accent transition-colors duration-300 hover:underline">Home</Link>
-          <Link href="/about" className="text-primary-foreground hover:text-accent transition-colors duration-300 hover:underline">About Us</Link>
-          <Link href="/academics" className="text-primary-foreground hover:text-accent transition-colors duration-300 hover:underline">Academics</Link>
-          <Link href="/news-and-events" className="text-primary-foreground hover:text-accent transition-colors duration-300 hover:underline">News & Events</Link>
-          <Link href="/blog" className="text-primary-foreground hover:text-accent transition-colors duration-300 hover:underline">Blog</Link>
-          <Link href="/contact" className="text-primary-foreground hover:text-accent transition-colors duration-300 hover:underline">Contact</Link>
+        <nav className="hidden md:flex items-center space-x-8">
+          <Link 
+            href="/" 
+            className="text-white hover:text-white/90 transition-colors duration-200 text-sm font-medium hover:underline underline-offset-4"
+          >
+            Home
+          </Link>
+          <Link 
+            href="/about" 
+            className="text-white hover:text-white/90 transition-colors duration-200 text-sm font-medium hover:underline underline-offset-4"
+          >
+            About Us
+          </Link>
+          <Link 
+            href="/academics" 
+            className="text-white hover:text-white/90 transition-colors duration-200 text-sm font-medium hover:underline underline-offset-4"
+          >
+            Academics
+          </Link>
+          <Link 
+            href="/news-and-events" 
+            className="text-white hover:text-white/90 transition-colors duration-200 text-sm font-medium hover:underline underline-offset-4"
+          >
+            News & Events
+          </Link>
+          <Link 
+            href="/blog" 
+            className="text-white hover:text-white/90 transition-colors duration-200 text-sm font-medium hover:underline underline-offset-4"
+          >
+            Blog
+          </Link>
+          <Link 
+            href="/contact" 
+            className="text-white hover:text-white/90 transition-colors duration-200 text-sm font-medium hover:underline underline-offset-4"
+          >
+            Contact
+          </Link>
         </nav>
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X /> : <Menu />}
+        <button 
+          className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       {isOpen && (
@@ -39,15 +74,45 @@ const Header = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-background"
+          className="md:hidden bg-white border-t"
         >
-          <div className="container mx-auto px-4 py-2 flex flex-col space-y-2">
-            <Link href="/" className="text-primary hover:text-accent transition-colors duration-300 hover:underline">Home</Link>
-            <Link href="/about" className="text-primary hover:text-accent transition-colors duration-300 hover:underline">About Us</Link>
-            <Link href="/academics" className="text-primary hover:text-accent transition-colors duration-300 hover:underline">Academics</Link>
-            <Link href="/news-and-events" className="text-primary hover:text-accent transition-colors duration-300 hover:underline">News & Events</Link>
-            <Link href="/blog" className="text-primary hover:text-accent transition-colors duration-300 hover:underline">Blog</Link>
-            <Link href="/contact" className="text-primary hover:text-accent transition-colors duration-300 hover:underline">Contact</Link>
+          <div className="container mx-auto px-6 py-4 flex flex-col space-y-4">
+            <Link 
+              href="/" 
+              className="text-gray-900 hover:text-[#0088FF] transition-colors duration-200 hover:underline underline-offset-4"
+            >
+              Home
+            </Link>
+            <Link 
+              href="/about" 
+              className="text-gray-900 hover:text-[#0088FF] transition-colors duration-200 hover:underline underline-offset-4"
+            >
+              About Us
+            </Link>
+            <Link 
+              href="/academics" 
+              className="text-gray-900 hover:text-[#0088FF] transition-colors duration-200 hover:underline underline-offset-4"
+            >
+              Academics
+            </Link>
+            <Link 
+              href="/news-and-events" 
+              className="text-gray-900 hover:text-[#0088FF] transition-colors duration-200 hover:underline underline-offset-4"
+            >
+              News & Events
+            </Link>
+            <Link 
+              href="/blog" 
+              className="text-gray-900 hover:text-[#0088FF] transition-colors duration-200 hover:underline underline-offset-4"
+            >
+              Blog
+            </Link>
+            <Link 
+              href="/contact" 
+              className="text-gray-900 hover:text-[#0088FF] transition-colors duration-200 hover:underline underline-offset-4"
+            >
+              Contact
+            </Link>
           </div>
         </motion.nav>
       )}

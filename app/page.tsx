@@ -261,7 +261,13 @@ export default function Home() {
                   <label htmlFor="message" className="block mb-2">Message</label>
                   <textarea id="message" name="message" rows={4} className="w-full p-2 border rounded" required></textarea>
                 </div>
-                <Button type="submit">Send Message</Button>
+                <Button 
+                  type="submit" 
+                  className="w-full md:w-auto px-8" 
+                  style={{ backgroundColor: '#3498db', color: 'white', borderRadius: '8px' }}
+>
+                  Send Message
+                </Button>
               </form>
             </motion.div>
           </div>

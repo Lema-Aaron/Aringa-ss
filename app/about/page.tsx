@@ -3,6 +3,8 @@
 import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FC } from 'react';
+import { LucideProps } from 'lucide-react';
 import { motion, useAnimation, useScroll, useTransform } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Button } from '@/components/ui/button'
@@ -10,15 +12,21 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { BookOpen, Users, Trophy, GraduationCap, Clock, MapPin, Mail, Phone, Heart, Star, Sun } from 'lucide-react'
 
-const FadeInWhenVisible = ({ children, delay = 0 }) => {
-  const controls = useAnimation()
-  const [ref, inView] = useInView()
+// Define the types for props explicitly
+type FadeInWhenVisibleProps = {
+  children: React.ReactNode; // This will type children properly
+  delay?: number; // Optional delay prop, default is 0
+};
+
+const FadeInWhenVisible: React.FC<FadeInWhenVisibleProps> = ({ children, delay = 0 }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible")
+      controls.start('visible');
     }
-  }, [controls, inView])
+  }, [controls, inView]);
 
   return (
     <motion.div
@@ -28,26 +36,35 @@ const FadeInWhenVisible = ({ children, delay = 0 }) => {
       transition={{ duration: 0.5, delay }}
       variants={{
         visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 20 }
+        hidden: { opacity: 0, y: 20 },
       }}
     >
       {children}
     </motion.div>
-  )
-}
+  );
+};
+// Define the types for props explicitly
+type ParallaxSectionProps = {
+  children: React.ReactNode; // Type the children prop as React.ReactNode
+};
 
-const ParallaxSection = ({ children }) => {
-  const { scrollYProgress } = useScroll()
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
+const ParallaxSection: React.FC<ParallaxSectionProps> = ({ children }) => {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
   return (
     <motion.div style={{ y }} className="relative">
       {children}
     </motion.div>
-  )
+  );
+};
+
+
+interface FloatingIconProps {
+  icon: React.ComponentType<LucideProps>; // Use LucideProps directly
 }
 
-const FloatingIcon = ({ icon: Icon }) => {
+const FloatingIcon: FC<FloatingIconProps> = ({ icon: Icon }) => {
   return (
     <motion.div
       animate={{
@@ -65,10 +82,10 @@ const FloatingIcon = ({ icon: Icon }) => {
         opacity: 0.2
       }}
     >
-      <Icon size={32} />
+      <Icon size={32} /> {/* Pass the size prop to the Icon */}
     </motion.div>
-  )
-}
+  );
+};
 
 const staffMembers = [
   { 
@@ -351,7 +368,7 @@ export default function AboutPage() {
                       <CardTitle>1990s-2000s: Expansion and Recognition</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p>Over the next two decades, Aringa Secondary School experienced significant growth. New facilities were added, including science laboratories, a library, and sports fields. The school's reputation for academic excellence grew, attracting students from across the country and earning national recognition for its achievements.</p>
+                      <p>Over the next two decades, Aringa Secondary School experienced significant growth. New facilities were added, including science laboratories, a library, and sports fields. The school&apos;s reputation for academic excellence grew, attracting students from across the country and earning national recognition for its achievements.</p>
                     </CardContent>
                   </Card>
                 </FadeInWhenVisible>
@@ -566,14 +583,20 @@ export default function AboutPage() {
       >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Join Our Faith-Based Learning Community</h2>
-          <p className="text-xl mb-8">Discover how Aringa Secondary School can nurture your child's faith, knowledge, and character.</p>
+          <p className="text-xl mb-8">Discover how Aringa Secondary School can nurture your child&apos;s faith, knowledge, and character.</p>
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button asChild size="lg" variant="secondary">
+            <Button 
+              asChild 
+              size="lg" 
+              variant="secondary" 
+              style={{ backgroundColor: '#3498db', color: 'white', borderRadius: '8px', padding: '0.5rem 2rem' }}
+>
               <Link href="/contact">Contact Us</Link>
             </Button>
+
           </motion.div>
         </div>
       </motion.section>

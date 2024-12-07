@@ -88,9 +88,14 @@ export default function ContactPage() {
               ></textarea>
             </div>
             
-            <Button type="submit" className="w-full md:w-auto px-8">
+            <Button 
+              type="submit" 
+              className="w-full md:w-auto px-8" 
+              style={{ backgroundColor: '#3498db', color: 'white', borderRadius: '8px' }}
+>
               Send Message
             </Button>
+
           </form>
         </div>
       </div>

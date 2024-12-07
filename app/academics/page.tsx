@@ -462,9 +462,10 @@ export default function AcademicsPage() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <Button asChild size="lg" variant="secondary">
+            <Button asChild size="lg" variant="secondary" style={{ backgroundColor: '#3498db', color: 'white', borderRadius: '8px' }}>
               <Link href="/contact">Contact Us</Link>
             </Button>
+
           </motion.div>
         </div>
       </motion.section>

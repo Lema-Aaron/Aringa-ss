@@ -117,7 +117,15 @@ export default function Home() {
                 <li>Community Engagement</li>
               </ul>
               <p className="mb-4">Founded in 1985, Aringa Secondary School has a rich history of academic excellence and community involvement. Our dedicated staff and state-of-the-art facilities provide students with the tools they need to succeed in the 21st century.</p>
-              <Button variant="outline">Learn More About Us</Button>
+              <Link href="/about">
+                <Button 
+                  variant="outline"
+                  className="w-full md:w-auto px-8" 
+                  style={{ backgroundColor: '#3498db', color: 'white', borderRadius: '8px' }}
+      >
+                  Learn More About Us
+      </Button>
+    </Link>
             </motion.div>
           </div>
         </div>

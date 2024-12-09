@@ -41,7 +41,16 @@ export default function EventPage({ params }: { params: { id: string } }) {
         <p>{event.content}</p>
       </div>
       <Button asChild>
-        <Link href="/news-and-events">Back to News & Events</Link>
+        <Link href="/news-and-events">
+        
+        <Button 
+              type="submit" 
+              className="w-full md:w-auto px-8" 
+              style={{ backgroundColor: '#3498db', color: 'white', borderRadius: '8px' }}
+>               Back to News & Events
+              
+            </Button>
+        </Link>
       </Button>
     </div>
   )

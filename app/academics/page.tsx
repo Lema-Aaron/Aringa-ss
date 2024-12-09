@@ -9,6 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { BookOpen, PaintbrushIcon as PaintBrush, GraduationCap, Users, Trophy, Calendar, Microscope, Calculator, BookOpenCheck, Globe2, Code } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/app/components/ui/avatar'
 
+
+
 const departments = [
   {
     name: 'Science',
@@ -129,45 +131,47 @@ export default function AcademicsPage() {
     <div className="min-h-screen bg-background relative overflow-hidden">
       <AnimatedBackground />
       {/* Hero Section */}
-      <motion.section
-        initial="hidden"
-        animate="visible"
+<motion.section
+  initial="hidden"
+  animate="visible"
+  variants={fadeInUpVariants}
+  transition={{ duration: 0.5 }}
+  className="relative bg-primary text-primary-foreground py-20 min-h-[60vh] flex items-center"
+>
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="/placeholder.svg?height=1080&width=1920&text=Aringa+Secondary+School"
+      alt="Aringa Secondary School Building"
+      layout="fill"
+      objectFit="cover"
+      priority
+    />
+    <div className="absolute inset-0 bg-black opacity-50"></div>
+  </div>
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="max-w-3xl mx-auto text-center">
+      <motion.h1
+        className="text-4xl md:text-5xl font-bold mb-6"
         variants={fadeInUpVariants}
-        transition={{ duration: 0.5 }}
-        className="bg-primary text-primary-foreground py-20 relative"
+        transition={{ delay: 0.2 }}
       >
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-50"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 1 }}
-        />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.h1
-            className="text-4xl md:text-5xl font-bold mb-6 text-center"
-            variants={fadeInUpVariants}
-            transition={{ delay: 0.2 }}
-          >
-            Academic Excellence at Aringa Secondary School
-          </motion.h1>
-          <motion.p
-            className="text-xl md:text-2xl text-center mb-8"
-            variants={fadeInUpVariants}
-            transition={{ delay: 0.4 }}
-          >
-            Empowering minds, shaping futures through innovative education
-          </motion.p>
-          <motion.div
-            className="flex justify-center"
-            variants={fadeInUpVariants}
-            transition={{ delay: 0.6 }}
-          >
-            <Button asChild size="lg" variant="secondary">
-              <Link href="#departments">Explore Our Departments</Link>
-            </Button>
-          </motion.div>
-        </div>
-      </motion.section>
+        Academic Excellence at Aringa Secondary School
+      </motion.h1>
+      <motion.p
+        className="text-xl md:text-2xl mb-8"
+        variants={fadeInUpVariants}
+        transition={{ delay: 0.4 }}
+      >
+        Empowering minds, shaping futures through innovative education
+      </motion.p>
+      <motion.div
+        variants={fadeInUpVariants}
+        transition={{ delay: 0.6 }}
+      >
+      </motion.div>
+    </div>
+  </div>
+</motion.section>
 
       {/* Departments Section */}
       <section id="departments" className="py-20">
@@ -205,7 +209,7 @@ export default function AcademicsPage() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeInUpVariants}
-                  transition={{ duration: 0.5, delay: 0.1 * _index }}
+                  transition={{ duration: 0.5, delay: 0.1 * _index}}
                 >
                   <Card>
                     <CardHeader>
@@ -276,7 +280,7 @@ export default function AcademicsPage() {
                     <motion.div
                       className="relative h-32 w-32 mx-auto"
                       whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.8 *_index}}
+                      transition={{ duration: 0.8 * _index}}
                     >
                       <Image
                         src={student.photo}
@@ -338,7 +342,7 @@ export default function AcademicsPage() {
                       <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        transition={{ type: "spring", stiffness: 260, damping: 20 *_index }}
+                        transition={{ type: "spring", stiffness: 260, damping: 20 * _index}}
                       >
                         <feature.icon className="w-8 h-8 text-primary" />
                       </motion.div>
@@ -462,10 +466,14 @@ export default function AcademicsPage() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <Button asChild size="lg" variant="secondary" style={{ backgroundColor: '#3498db', color: 'white', borderRadius: '8px' }}>
+            
+            <Button 
+              asChild 
+              size="lg" 
+              variant="secondary" 
+              className="bg-[#3498db] text-white rounded-lg w-full md:w-auto px-8">
               <Link href="/contact">Contact Us</Link>
             </Button>
-
           </motion.div>
         </div>
       </motion.section>

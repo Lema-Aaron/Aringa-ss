@@ -39,7 +39,16 @@ export default function BlogPost({ params }: { params: { id: string } }) {
         <p>{post.content}</p>
       </div>
       <Button asChild>
-        <Link href="/blog">Back to Blog</Link>
+        <Link href="/blog">
+        <Button 
+              type="submit" 
+              className="w-full md:w-auto px-8" 
+              style={{ backgroundColor: '#3498db', color: 'white', borderRadius: '8px' }}
+>               Back to Blog
+              
+            </Button>
+        
+        </Link>
       </Button>
     </div>
   )

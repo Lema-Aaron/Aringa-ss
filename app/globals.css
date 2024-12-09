@@ -89,6 +89,13 @@
     color: hsl(var(--footer-text));
   }
 }
+/* globals.css */
+@layer utilities {
+  .text-foreground {
+    color: var(--foreground);
+  }
+}
+
 
 @layer utilities {
   .bg-page {
@@ -114,6 +121,7 @@
     border-color: hsl(var(--border));
   }
 }
+
 
 /* Custom styles for Aringa Secondary School */
 .gradient-bg {

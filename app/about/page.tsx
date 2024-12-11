@@ -224,7 +224,7 @@ export default function AboutPage() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1, duration: 0.5 }}
             >
-              Empowering minds, shaping futures since 1985
+              Giving light to darkness since 1985
             </motion.p>
           </div>
         </motion.div>

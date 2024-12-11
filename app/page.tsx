@@ -60,7 +60,7 @@ export default function Home() {
             className="text-center text-white"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-4 hero-text-shadow">Welcome to Aringa Secondary School</h1>
-            <p className="text-xl mb-8">Empowering minds, shaping futures</p>
+            <p className="text-xl mb-8">Give light to darkness</p>
             <Button asChild size="lg" variant="secondary">
               <Link href="#about">Learn More</Link>
             </Button>
@@ -235,15 +235,15 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
               <div className="flex items-start mb-2">
                 <MapPin className="mr-2 mt-1 text-primary" />
-                <p>123 School Street, Aringa, Uganda</p>
+                <p>P.O BOX 23, Yumbe, Uganda</p>
               </div>
               <div className="flex items-center mb-2">
                 <Phone className="mr-2 text-primary" />
-                <p>Phone: +256 123 456 789</p>
+                <p>Phone: +256 782 107336</p>
               </div>
               <div className="flex items-center mb-2">
                 <Mail className="mr-2 text-primary" />
-                <p>Email: info@aringasecondary.edu</p>
+                <p>Email: aringass@yahoo.com</p>
               </div>
               <h3 className="text-2xl font-bold mt-8 mb-4">Office Hours</h3>
               <p className="mb-2">Monday - Friday: 8:00 AM - 4:00 PM</p>

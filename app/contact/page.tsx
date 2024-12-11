@@ -16,15 +16,17 @@ export default function ContactPage() {
           <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
           <div className="flex items-start mb-4">
             <MapPin className="mr-2 mt-1 text-primary" />
-            <p>123 School Street, Aringa, Uganda</p>
+            <p>P.O BOX 23, Yumbe, Uganda</p>
           </div>
           <div className="flex items-center mb-4">
             <Phone className="mr-2 text-primary" />
-            <p>+256 123 456 789</p>
+            <p>Phone: +256 782 107336
+
+</p>
           </div>
           <div className="flex items-center mb-4">
             <Mail className="mr-2 text-primary" />
-            <p>info@aringasecondary.edu</p>
+            <p>Email: aringass@yahoo.com</p>
           </div>
           
           <h2 className="text-2xl font-bold mt-8 mb-6">Office Hours</h2>

@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Aringa Secondary School</h3>
-            <p className="mb-4">Empowering minds, shaping futures</p>
+            <p className="mb-4">Give light to darkness</p>
             <div className="flex space-x-4">
               <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300 hover:underline">
                 <Facebook size={24} />
@@ -43,15 +43,15 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <div className="flex items-start mb-2">
               <MapPin className="mr-2 mt-1" size={18} />
-              <p>123 School Street, Aringa, Uganda</p>
+              <p>P.O BOX 23, Yumbe, Uganda</p>
             </div>
             <div className="flex items-center mb-2">
               <Phone className="mr-2" size={18} />
-              <p>Phone: +256 123 456 789</p>
+              <p>Phone: +256 782 107336</p>
             </div>
             <div className="flex items-center mb-2">
               <Mail className="mr-2" size={18} />
-              <p>Email: info@aringasecondary.edu</p>
+              <p>Email: aringass@yahoo.com</p>
             </div>
           </div>
         </div>

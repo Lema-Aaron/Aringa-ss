@@ -26,7 +26,7 @@ export default function ContactPage() {
           </div>
           <div className="flex items-center mb-4">
             <Mail className="mr-2 text-primary" />
-            <p>Email: aringass@yahoo.com</p>
+            <p>Email: aringasecondaryschool@yahoo.com</p>
           </div>
           
           <h2 className="text-2xl font-bold mt-8 mb-6">Office Hours</h2>

@@ -243,7 +243,7 @@ export default function Home() {
               </div>
               <div className="flex items-center mb-2">
                 <Mail className="mr-2 text-primary" />
-                <p>Email: aringass@yahoo.com</p>
+                <p>Email: aringasecondaryschool@yahoo.com</p>
               </div>
               <h3 className="text-2xl font-bold mt-8 mb-4">Office Hours</h3>
               <p className="mb-2">Monday - Friday: 8:00 AM - 4:00 PM</p>

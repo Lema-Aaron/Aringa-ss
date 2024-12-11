@@ -162,7 +162,7 @@ export default function AcademicsPage() {
         variants={fadeInUpVariants}
         transition={{ delay: 0.4 }}
       >
-        Empowering minds, shaping futures through innovative education
+        Giving light to darkness through innovative education
       </motion.p>
       <motion.div
         variants={fadeInUpVariants}

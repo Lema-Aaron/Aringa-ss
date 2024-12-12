@@ -140,7 +140,7 @@ export default function AcademicsPage() {
 >
   <div className="absolute inset-0 z-0">
     <Image
-      src="/placeholder.svg?height=1080&width=1920&text=Aringa+Secondary+School"
+      src="/students.jpg?height=1080&width=1920&text=Aringa+Secondary+School"
       alt="Aringa Secondary School Building"
       layout="fill"
       objectFit="cover"
@@ -151,14 +151,14 @@ export default function AcademicsPage() {
   <div className="container mx-auto px-4 relative z-10">
     <div className="max-w-3xl mx-auto text-center">
       <motion.h1
-        className="text-4xl md:text-5xl font-bold mb-6"
+        className="text-4xl md:text-5xl font-bold mb-6 text-white"
         variants={fadeInUpVariants}
         transition={{ delay: 0.2 }}
       >
         Academic Excellence at Aringa Secondary School
       </motion.h1>
       <motion.p
-        className="text-xl md:text-2xl mb-8"
+        className="text-xl md:text-2xl mb-8 text-white"
         variants={fadeInUpVariants}
         transition={{ delay: 0.4 }}
       >

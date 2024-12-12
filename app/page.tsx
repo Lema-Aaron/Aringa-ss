@@ -12,9 +12,9 @@ import SocialLinks from './components/social-links'
 import { MapPin, Phone, Mail } from 'lucide-react'
 
 const images = [
-  { src: '/placeholder.svg?height=600&width=1200&text=School+Building', alt: 'Aringa Secondary School Building' },
-  { src: '/placeholder.svg?height=600&width=1200&text=Students+in+Class', alt: 'Students in a classroom' },
-  { src: '/placeholder.svg?height=600&width=1200&text=Sports+Field', alt: 'School sports field' },
+  { src: '/students.jpg?height=600&width=1200&text=School+Building', alt: 'Aringa Secondary School Building' },
+  { src: '/students3.jpg?height=600&width=1200&text=Students+in+Class', alt: 'Students in a classroom' },
+  { src: '/students2.jpg?height=600&width=1200&text=Sports+Field', alt: 'School sports field' },
 ]
 
 export default function Home() {
@@ -62,8 +62,14 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold mb-4 hero-text-shadow">Welcome to Aringa Secondary School</h1>
             <p className="text-xl mb-8">Give light to darkness</p>
             <Button asChild size="lg" variant="secondary">
-              <Link href="#about">Learn More</Link>
+              <Link 
+                href="#about" 
+                className="text-white bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 rounded-lg shadow-lg hover:from-purple-500 hover:to-blue-500 hover:scale-105 transform transition duration-300 ease-in-out"
+  >
+                  Learn More
+              </Link>
             </Button>
+
           </motion.div>
         </div>
         {/* Carousel Indicators */}

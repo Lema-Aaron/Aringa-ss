@@ -197,7 +197,7 @@ export default function AboutPage() {
         transition={{ duration: 1 }}
       >
         <Image
-          src="/placeholder.svg?height=1080&width=1920&text=Aringa+Secondary+School"
+          src="/students1.pg?height=1080&width=1920&text=Aringa+Secondary+School"
           alt="Aringa Secondary School Campus"
           layout="fill"
           objectFit="cover"

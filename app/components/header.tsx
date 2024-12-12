@@ -15,7 +15,7 @@ const Header = () => {
         <Link href="/" className="flex items-center space-x-4">
           <div className="relative w-12 h-12 bg-white rounded-full overflow-hidden flex items-center justify-center">
             <Image
-              src="/placeholder.svg?height=48&width=48"
+              src="/logo.png?height=48&width=48"
               alt="Aringa Secondary School Logo"
               width={48}
               height={48}

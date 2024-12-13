@@ -592,8 +592,9 @@ export default function AboutPage() {
               asChild 
               size="lg" 
               variant="secondary" 
+              className="text-white bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 rounded-lg shadow-lg hover:from-purple-500 hover:to-blue-500 hover:scale-105 transform transition duration-300 ease-in-out"
               style={{ backgroundColor: '#3498db', color: 'white', borderRadius: '8px', padding: '0.5rem 2rem' }}
->
+>   
               <Link href="/contact">Contact Us</Link>
             </Button>
 

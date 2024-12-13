@@ -471,7 +471,7 @@ export default function AcademicsPage() {
               asChild 
               size="lg" 
               variant="secondary" 
-              className="bg-[#3498db] text-white rounded-lg w-full md:w-auto px-8">
+              className="text-white bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 rounded-lg shadow-lg hover:from-purple-500 hover:to-blue-500 hover:scale-105 transform transition duration-300 ease-in-out">
               <Link href="/contact">Contact Us</Link>
             </Button>
           </motion.div>

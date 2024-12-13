@@ -74,9 +74,9 @@ const testimonials = [
     content: 'Aringa Secondary School has provided an excellent education for my child. The teachers are dedicated and the facilities are top-notch.',
   },
   {
-    name: 'Jane Smith',
+    name: 'Lema Aaron',
     role: 'Alumni',
-    image: '/placeholder.svg?height=100&width=100',
+    image: '/Aaron.jpg?height=100&width=100',
     content: 'My years at Aringa Secondary School prepared me well for university and beyond. I\'m grateful for the strong foundation I received here.',
   },
   {
@@ -381,15 +381,15 @@ export default function AcademicsPage() {
             {[
               {
                 title: "State-of-the-Art Laboratories",
-                description: "Our modern labs are equipped with the latest technology to support hands-on learning in sciences and technology subjects."
+                description: "Equipped with essential tools and resources to provide hands-on experience in science and technology. Encourages practical learning and nurtures problem-solving skills among students."
               },
               {
                 title: "Extensive Library",
-                description: "Access a vast collection of books, journals, and digital resources to support your research and studies."
+                description: "A rich collection of textbooks, reference materials, and storybooks tailored to meet the academic and cultural needs of the students. A quiet, comfortable space that inspires independent learning and a love for reading."
               },
               {
-                title: "Online Learning Platforms",
-                description: "Benefit from our integrated online learning systems that complement classroom instruction and facilitate remote learning."
+                title: "Dedicated Study and Resource Centers",
+                description: "Specialized spaces for group discussions, mentorship programs, and subject-focused study sessions led by teachers, Including curated materials like past papers, revision guides, and interactive learning tools to enhance understanding and academic success."
               }
             ].map((resource) => (
               <motion.div

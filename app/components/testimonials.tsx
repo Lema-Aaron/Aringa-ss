@@ -12,9 +12,9 @@ const testimonials = [
     content: 'Aringa Secondary School has provided an excellent education for my child. The teachers are dedicated and the facilities are top-notch.',
   },
   {
-    name: 'Jane Smith',
+    name: 'Lema Aaron',
     role: 'Alumni',
-    image: '/placeholder.svg?height=100&width=100',
+    image: '/Aaron.jpg?height=100&width=100',
     content: 'My years at Aringa Secondary School prepared me well for university and beyond. I\'m grateful for the strong foundation I received here.',
   },
   {

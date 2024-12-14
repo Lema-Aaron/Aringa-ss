@@ -30,7 +30,7 @@ export default function AdminLoginPage() {
     } catch (error) {
       console.error(error)
       toast({
-        title: 'Error',
+        title: 'Error, Try Again',
         description: 'Invalid username or password',
         variant: 'destructive',
       })
@@ -38,16 +38,23 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-sm px-6 py-8 bg-white shadow-md rounded-lg">
+    <div className="flex items-center justify-center min-h-screen bg-cover bg-center bg-fixed bg-[url('/students4.jpg')]">
+      {/* Form Container */}
+      <div className="w-full max-w-sm px-6 py-8 bg-white bg-opacity-90 backdrop-blur-md shadow-md rounded-lg border border-white/60">
         <Card>
           <CardHeader>
             <CardTitle className="text-4xl font-bold text-center text-gray-800">Admin Login</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-6">
+              {/* Username Input */}
               <div>
-                <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                <label
+                  htmlFor="username"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Username
+                </label>
                 <Input
                   id="username"
                   type="text"
@@ -57,8 +64,14 @@ export default function AdminLoginPage() {
                   className="border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full"
                 />
               </div>
+              {/* Password Input */}
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Password
+                </label>
                 <Input
                   id="password"
                   type="password"
@@ -68,7 +81,11 @@ export default function AdminLoginPage() {
                   className="border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full"
                 />
               </div>
-              <Button type="submit" className="w-full bg-blue-600 text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg py-2 text-sm">
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                className="w-full text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:from-purple-500 hover:to-blue-500 hover:scale-105 transform transition duration-300 ease-in-out focus:ring-4 focus:ring-blue-300 font-medium rounded-lg py-2 text-sm"
+              >
                 Login
               </Button>
             </form>

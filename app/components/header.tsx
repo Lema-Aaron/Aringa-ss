@@ -61,6 +61,12 @@ const Header = () => {
           >
             Contact
           </Link>
+          <Link 
+            href="/admin/login" 
+            className="text-white hover:text-white/90 transition-colors duration-200 text-sm font-medium hover:underline underline-offset-4"
+          >
+            Admin
+          </Link>
         </nav>
         <button 
           className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
@@ -112,6 +118,12 @@ const Header = () => {
               className="text-gray-900 hover:text-[#0088FF] transition-colors duration-200 hover:underline underline-offset-4"
             >
               Contact
+            </Link>
+            <Link 
+              href="/admin/login" 
+              className="text-gray-900 hover:text-[#0088FF] transition-colors duration-200 hover:underline underline-offset-4"
+            >
+              Admin
             </Link>
           </div>
         </motion.nav>

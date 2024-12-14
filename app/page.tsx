@@ -106,7 +106,7 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Image src="/placeholder.svg?height=400&width=600" alt="School building" width={600} height={400} className="rounded-lg" />
+              <Image src="/students4.jpg?height=400&width=600" alt="School building" width={600} height={400} className="rounded-lg" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { FadeIn, ScaleIn } from '@/components/animations'
 
@@ -28,32 +29,44 @@ const blogPosts = [
 
 export default function BlogPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <FadeIn>
-        <h1 className="text-4xl font-bold mb-8"><center>Aringa Secondary School Blog</center></h1>
-      </FadeIn>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogPosts.map((post, index) => (
-          <FadeIn key={post.id} delay={index * 0.1}>
-            <ScaleIn delay={index * 0.1}>
-              <Card className="card-hover">
-                <CardHeader>
-                  <CardTitle>{post.title}</CardTitle>
-                  <CardDescription>{post.date}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">{post.date}</span>
-                    <Link href={`/blog/${post.id}`} className="text-primary hover:underline">
-                      Read more
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            </ScaleIn>
+    <div className="relative min-h-screen">
+      <Image
+        src="/placeholder.svg?height=1080&width=1920&text=Blog+Background"
+        alt="Blog Background"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        className="z-0"
+      />
+      <div className="relative z-10 bg-white bg-opacity-90 min-h-screen py-12">
+        <div className="container mx-auto px-4">
+          <FadeIn>
+            <h1 className="text-4xl font-bold mb-8 text-center text-primary">Aringa Secondary School Blog</h1>
           </FadeIn>
-        ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {blogPosts.map((post, index) => (
+              <FadeIn key={post.id} delay={index * 0.1}>
+                <ScaleIn delay={index * 0.1}>
+                  <Card className="card-hover bg-white bg-opacity-75 backdrop-blur-sm">
+                    <CardHeader>
+                      <CardTitle className="text-primary">{post.title}</CardTitle>
+                      <CardDescription>{post.date}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">{post.excerpt}</p>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-muted-foreground">{post.date}</span>
+                        <Link href={`/blog/${post.id}`} className="text-primary hover:underline">
+                          Read more
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </ScaleIn>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )

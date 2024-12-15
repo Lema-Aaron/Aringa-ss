@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { FadeIn, ScaleIn, ParallaxScroll } from '@/components/animations'
 
@@ -30,42 +31,51 @@ const newsAndEvents = [
 
 export default function NewsAndEventsPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <ParallaxScroll speed={0.5}>
-        <div className="bg-primary text-primary-foreground py-20">
-          <div className="container mx-auto px-4">
-            <FadeIn>
-            <h1 className="text-4xl font-bold mb-4 text-center">Aringa Secondary School: News & Events</h1>
-            <p className="text-xl text-center">Stay updated with the latest happenings at our school</p>
-
-            </FadeIn>
+    <div className="relative min-h-screen">
+      <Image
+        src="/placeholder.svg?height=1080&width=1920&text=News+and+Events+Background"
+        alt="News and Events Background"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        className="z-0"
+      />
+      <div className="relative z-10 min-h-screen">
+        <ParallaxScroll speed={0.5}>
+          <div className="bg-primary bg-opacity-90 text-primary-foreground py-20">
+            <div className="container mx-auto px-4">
+              <FadeIn>
+                <h1 className="text-4xl font-bold mb-4 text-center">Aringa Secondary School: News & Events</h1>
+                <p className="text-xl text-center">Stay updated with the latest happenings at our school</p>
+              </FadeIn>
+            </div>
           </div>
-        </div>
-      </ParallaxScroll>
+        </ParallaxScroll>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {newsAndEvents.map((item, index) => (
-            <FadeIn key={item.id} delay={index * 0.1}>
-              <ScaleIn delay={index * 0.1}>
-                <Card className="card-hover">
-                  <CardHeader>
-                    <CardTitle>{item.title}</CardTitle>
-                    <CardDescription>{item.date} - {item.category}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">{item.excerpt}</p>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">{item.date}</span>
-                      <Link href={`/news-and-events/${item.id}`} className="text-primary hover:underline">
-                        Read more
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-              </ScaleIn>
-            </FadeIn>
-          ))}
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {newsAndEvents.map((item, index) => (
+              <FadeIn key={item.id} delay={index * 0.1}>
+                <ScaleIn delay={index * 0.1}>
+                  <Card className="card-hover bg-white bg-opacity-90 backdrop-blur-sm">
+                    <CardHeader>
+                      <CardTitle className="text-primary">{item.title}</CardTitle>
+                      <CardDescription>{item.date} - {item.category}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">{item.excerpt}</p>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-muted-foreground">{item.date}</span>
+                        <Link href={`/news-and-events/${item.id}`} className="text-primary hover:underline">
+                          Read more
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </ScaleIn>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
     </div>

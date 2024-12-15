@@ -1,0 +1,55 @@
+/* BlogPost.module.css */
+
+.blogPostContainer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .blogPostContent {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 50rem;
+    width: 100%;
+  }
+  
+  .blogPostTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .blogPostDate {
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+  }
+  
+  .blogPostContentText {
+    margin-bottom: 1.5rem;
+  }
+  
+  .backButton {
+    background-image: linear-gradient(to right, #3498db, #9b59b6);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .backButton:hover {
+    transform: scale(1.05);
+    background-image: linear-gradient(to right, #9b59b6, #3498db);
+  }
+  
+  /* Dynamic background image for blog post */
+  .blogPostContainerWithBackground {
+    background-image: var(--bg-image);
+  }
+  

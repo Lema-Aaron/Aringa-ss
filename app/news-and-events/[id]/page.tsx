@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 const newsAndEvents = [
   {
@@ -37,24 +38,30 @@ export default function EventPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${event.image})` }}
-    >
-      <div className="bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-2xl w-full">
+    <div className="relative min-h-screen flex items-center justify-center">
+      <Image
+        src={event.image}
+        alt={event.title}
+        layout="fill"
+        objectFit="cover"
+        className="z-0"
+      />
+      <div className="z-10 bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-2xl w-full">
         <h1 className="text-4xl font-bold mb-4">{event.title}</h1>
         <p className="text-gray-500 mb-8">{event.date} - {event.category}</p>
         <div className="prose max-w-none mb-8">
           <p>{event.content}</p>
         </div>
         <Button asChild>
-          <Link href="/news-and-events">
-            <Button className="text-white bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 rounded-lg shadow-lg hover:from-purple-500 hover:to-blue-500 hover:scale-105 transition-transform duration-300">
-              Back to News & Events
-            </Button>
+          <Link 
+            href="/news-and-events" 
+            className="inline-block text-white bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 rounded-lg shadow-lg hover:from-purple-500 hover:to-blue-500 hover:scale-105 transition-transform duration-300"
+          >
+            Back to News & Events
           </Link>
         </Button>
       </div>
     </div>
   )
 }
+

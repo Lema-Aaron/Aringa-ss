@@ -35,8 +35,9 @@ export default function NewsAndEventsPage() {
         <div className="bg-primary text-primary-foreground py-20">
           <div className="container mx-auto px-4">
             <FadeIn>
-              <h1 className="text-4xl font-bold mb-4"><center>Aringa Secondary School: News & Events</center></h1>
-              <p className="text-xl"><center>Stay updated with the latest happenings at our school</center></p>
+            <h1 className="text-4xl font-bold mb-4 text-center">Aringa Secondary School: News & Events</h1>
+            <p className="text-xl text-center">Stay updated with the latest happenings at our school</p>
+
             </FadeIn>
           </div>
         </div>

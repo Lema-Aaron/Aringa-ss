@@ -445,7 +445,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { icon: Users, title: "Student Body", description: "Over 1,000 students from diverse backgrounds" },
-              { icon: GraduationCap, title: "Faculty", description: "80+ qualified and experienced teachers" },
+              { icon: GraduationCap, title: "Faculty", description: "50+ qualified and experienced teachers" },
               { icon: BookOpen, title: "Academic Programs", description: "Comprehensive curriculum covering sciences, humanities, and arts" },
               { icon: Trophy, title: "Achievements", description: "Multiple national awards in academics, sports, and arts" },
               { icon: Clock, title: "Established", description: "Proudly serving the community since 1985" },

@@ -16,7 +16,7 @@ const departments = [
     name: 'Science',
     description: 'Explore the wonders of the natural world through our comprehensive science programs.',
     icon: Microscope,
-    subjects: ['Biology', 'Chemistry', 'Physics', 'Environmental Science']
+    subjects: ['Biology', 'Chemistry', 'Physics', 'Agriculture']
   },
   {
     name: 'Mathematics',
@@ -28,25 +28,25 @@ const departments = [
     name: 'Humanities',
     description: 'Gain a deeper understanding of human culture, history, and society.',
     icon: BookOpenCheck,
-    subjects: ['History', 'Literature', 'Philosophy', 'Social Studies']
+    subjects: ['History', 'Literature', 'Philosophy', 'Geography']
   },
   {
     name: 'Arts',
     description: 'Nurture your creativity and self-expression through our diverse arts programs.',
     icon: PaintBrush,
-    subjects: ['Visual Arts', 'Music', 'Drama', 'Dance']
+    subjects: ['Visual Arts']
   },
   {
     name: 'Languages',
     description: 'Prepare for a globalized world with our extensive language offerings.',
     icon: Globe2,
-    subjects: ['English', 'Swahili', 'French', 'Arabic']
+    subjects: ['English', 'Swahili','Arabic']
   },
   {
     name: 'Technology',
     description: 'Develop skills for the digital age with our cutting-edge technology courses.',
     icon: Code,
-    subjects: ['Computer Science', 'Information Technology', 'Digital Media', 'Robotics']
+    subjects: ['Computer Literacy', 'Information Technology']
   }
 ]
 
@@ -54,7 +54,7 @@ const features = [
   { title: 'Expert Faculty', description: 'Learn from experienced and passionate educators.', icon: GraduationCap },
   { title: 'Small Class Sizes', description: 'Enjoy personalized attention in our small, interactive classes.', icon: Users },
   { title: 'Extracurricular Activities', description: 'Develop well-rounded skills through our diverse extracurricular programs.', icon: Trophy },
-  { title: 'Flexible Scheduling', description: 'Balance your studies with other commitments through our flexible class schedules.', icon: Calendar },
+  { title: 'Flexible Scheduling', description: 'Balance your studies with other academics related commitments through our flexible class schedules.', icon: Calendar },
 ]
 
 const topStudents = [

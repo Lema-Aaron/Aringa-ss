@@ -449,7 +449,7 @@ export default function AboutPage() {
               { icon: BookOpen, title: "Academic Programs", description: "Comprehensive curriculum covering sciences, humanities, and arts" },
               { icon: Trophy, title: "Achievements", description: "Multiple national awards in academics, sports, and arts" },
               { icon: Clock, title: "Established", description: "Proudly serving the community since 1985" },
-              { icon: MapPin, title: "Location", description: "Situated on a beautiful 50-acre campus in Aringa, Uganda" },
+              { icon: MapPin, title: "Location", description: "Situated on a beautiful 50-acre campus in Aringa, Yumbe District, Uganda" },
             ].map((fact, index) => (
               <FadeInWhenVisible key={index} delay={index * 0.1}>
                 <motion.div

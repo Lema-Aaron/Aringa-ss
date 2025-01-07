@@ -197,7 +197,7 @@ export default function AboutPage() {
         transition={{ duration: 1 }}
       >
         <Image
-          src="/students1.jpg?height=1080&width=1920&text=Aringa+Secondary+School"
+          src="/sports.jpg?height=1080&width=1920&text=Aringa+Secondary+School"
           alt="Aringa Secondary School Campus"
           layout="fill"
           objectFit="cover"
@@ -323,7 +323,7 @@ export default function AboutPage() {
               <FadeInWhenVisible delay={0.2}>
                 <div className="relative h-[400px]">
                   <Image
-                    src="/placeholder.svg?height=400&width=600&text=Students+in+Class"
+                    src="/studentsInClass.jpg?height=400&width=600&text=Students+in+Class"
                     alt="Students in a classroom"
                     layout="fill"
                     objectFit="cover"
@@ -604,4 +604,3 @@ export default function AboutPage() {
     </div>
   )
 }
-

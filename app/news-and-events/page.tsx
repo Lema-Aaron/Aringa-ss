@@ -33,7 +33,7 @@ export default function NewsAndEventsPage() {
   return (
     <div className="relative min-h-screen">
       <Image
-        src="/placeholder.svg?height=1080&width=1920&text=News+and+Events+Background"
+        src="/patriotism.jpg?height=1080&width=1920&text=News+and+Events+Background"
         alt="News and Events Background"
         layout="fill"
         objectFit="cover"
@@ -45,8 +45,9 @@ export default function NewsAndEventsPage() {
           <div className="bg-primary bg-opacity-90 text-primary-foreground py-20">
             <div className="container mx-auto px-4">
               <FadeIn>
-                <h1 className="text-4xl font-bold mb-4 text-center">Aringa Secondary School: News & Events</h1>
-                <p className="text-xl text-center">Stay updated with the latest happenings at our school</p>
+              <h1 className="text-4xl font-bold mb-4 text-center text-white">Aringa Secondary School: News & Events</h1>
+              <p className="text-xl text-center text-white">Stay updated with the latest happenings at our school</p>
+
               </FadeIn>
             </div>
           </div>

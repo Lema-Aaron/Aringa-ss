@@ -1,71 +1,81 @@
 import { NextResponse } from 'next/server'
-import { Resend } from 'resend'
-import { PrismaClient } from '@prisma/client'
-import { Server as SocketServer } from 'socket.io'
-import webpush from 'web-push'
-
-const resend = new Resend(process.env.RESEND_API_KEY)
-const prisma = new PrismaClient()
+import nodemailer from 'nodemailer'
 
 export async function POST(request: Request) {
+  console.log('Contact form submission received')
+  
   try {
     const { name, email, message } = await request.json()
+    
+    // Validate input
+    if (!name || !email || !message) {
+      console.log('Missing required fields:', { name, email, message })
+      return NextResponse.json(
+        { error: 'All fields are required' },
+        { status: 400 }
+      )
+    }
 
-    // Store the message in the database
-    const storedMessage = await prisma.message.create({
-      data: {
-        name,
-        email,
-        message,
-        status: 'UNREAD',
+    // Create SMTP transporter
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: parseInt(process.env.SMTP_PORT || '587'),
+      secure: process.env.SMTP_SECURE === 'true',
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     })
 
-    // Send email notification to the school
-    const { data, error } = await resend.emails.send({
-      from: 'Aringa Secondary School <noreply@aringasecondary.edu>',
-      to: ['admin@aringasecondary.edu'],
+    // Verify SMTP connection
+    try {
+      await transporter.verify()
+      console.log('SMTP connection verified')
+    } catch (error) {
+      console.error('SMTP verification failed:', error)
+      return NextResponse.json(
+        { error: 'Email service configuration error' },
+        { status: 500 }
+      )
+    }
+
+    // Prepare email content
+    const mailOptions = {
+      from: `"Contact Form" <${process.env.SMTP_USER}>`,
+      to: process.env.CONTACT_EMAIL || 'lemaaaron3@gmail.com',
       subject: 'New Contact Form Submission',
       text: `
-        New message received:
         Name: ${name}
         Email: ${email}
         Message: ${message}
-        
-        Please log in to the admin panel to respond.
       `,
-    })
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 400 })
+      html: `
+        <h1>New Contact Form Submission</h1>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      `,
     }
 
-    // Emit WebSocket event for real-time notification
-    const io = (global as any).io
-    if (io) {
-      io.emit('newMessage', { id: storedMessage.id, name, email })
+    // Send email with error handling
+    try {
+      await transporter.sendMail(mailOptions)
+      console.log('Email sent successfully')
+      return NextResponse.json({ message: 'Message sent successfully' })
+    } catch (error) {
+      console.error('Error sending email:', error)
+      return NextResponse.json(
+        { error: 'Failed to send email' },
+        { status: 500 }
+      )
     }
 
-    // Send push notification
-    const subscriptions = await prisma.pushSubscription.findMany()
-    for (const subscription of subscriptions) {
-      try {
-        await webpush.sendNotification(
-          JSON.parse(subscription.subscription),
-          JSON.stringify({
-            title: 'New Message',
-            body: `New message from ${name}`,
-          })
-        )
-      } catch (error) {
-        console.error('Failed to send push notification:', error)
-      }
-    }
-
-    return NextResponse.json({ message: 'Message sent successfully', data: storedMessage })
   } catch (error) {
-    console.error(error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    console.error('Server error:', error)
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    )
   }
 }
 

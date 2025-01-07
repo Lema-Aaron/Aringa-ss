@@ -140,7 +140,7 @@ export default function AcademicsPage() {
 >
   <div className="absolute inset-0 z-0">
     <Image
-      src="/students.jpg?height=1080&width=1920&text=Aringa+Secondary+School"
+      src="/academics.jpg?height=1080&width=1920&text=Aringa+Secondary+School"
       alt="Aringa Secondary School Building"
       layout="fill"
       objectFit="cover"
@@ -480,4 +480,3 @@ export default function AcademicsPage() {
     </div>
   )
 }
-

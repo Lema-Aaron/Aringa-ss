@@ -31,7 +31,7 @@ export default function BlogPage() {
   return (
     <div className="relative min-h-screen">
       <Image
-        src="/placeholder.svg?height=1080&width=1920&text=Blog+Background"
+        src="/sports.jpg?height=1080&width=1920&text=Blog+Background"
         alt="Blog Background"
         layout="fill"
         objectFit="cover"

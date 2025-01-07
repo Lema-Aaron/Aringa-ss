@@ -1,27 +1,41 @@
-import { Server } from 'socket.io'
-import { NextApiResponseServerIO } from '@/types/next'
-import { NextRequest } from 'next/server'
+import { Server as SocketIOServer } from 'socket.io';
+import { NextApiRequest } from 'next';
+import { NextApiResponse } from 'next';
+import { Server as NetServer } from 'http';
+import { Socket as NetSocket } from 'net';
 
-export default function SocketHandler(req: NextRequest, res: NextApiResponseServerIO) {
-  if (!res.socket.server.io) {
-    const io = new Server(res.socket.server)
-    res.socket.server.io = io
+export type NextApiResponseWithSocket = NextApiResponse & {
+  socket: NetSocket & {
+    server: NetServer & {
+      io?: SocketIOServer; // Use optional chaining instead of `undefined`
+    };
+  };
+};
+
+const SocketHandler = (req: NextApiRequest, res: NextApiResponseWithSocket) => {
+  if (res.socket.server.io) {
+    console.log('Socket is already running');
+  } else {
+    console.log('Socket is initializing');
+    const io = new SocketIOServer(res.socket.server); // Use proper typing
+    res.socket.server.io = io; // Assign the `io` instance to the server
 
     io.on('connection', (socket) => {
-      console.log('New client connected')
+      console.log('New client connected');
 
       socket.on('disconnect', () => {
-        console.log('Client disconnected')
-      })
-    })
+        console.log('Client disconnected');
+      });
+    });
   }
 
-  res.end()
-}
+  res.end(); // Ensure the response is ended to avoid hanging
+};
+
+export default SocketHandler;
 
 export const config = {
   api: {
-    bodyParser: false,
+    bodyParser: false, // Disable body parsing for WebSocket compatibility
   },
-}
-
+};

@@ -4,12 +4,12 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 const images = [
-  { src: '/placeholder.svg?height=400&width=600', alt: 'School building' },
-  { src: '/placeholder.svg?height=400&width=600', alt: 'Students in classroom' },
-  { src: '/placeholder.svg?height=400&width=600', alt: 'Science lab' },
-  { src: '/placeholder.svg?height=400&width=600', alt: 'Sports field' },
-  { src: '/placeholder.svg?height=400&width=600', alt: 'Library' },
-  { src: '/placeholder.svg?height=400&width=600', alt: 'Art studio' },
+  { src: '/schoolBuilding.jpg?height=400&width=600', alt: 'School building' },
+  { src: '/studentsInClass.jpg?height=400&width=600', alt: 'Students in classroom' },
+  { src: '/sports.jpg?height=400&width=600', alt: 'sports' },
+  { src: '/prefects.jpg?height=400&width=600', alt: 'prefects' },
+  { src: '/library.jpg?height=400&width=600', alt: 'Library' },
+  { src: '/tycondo.png?height=400&width=600', alt: 'sports' },
 ]
 
 export default function Gallery() {

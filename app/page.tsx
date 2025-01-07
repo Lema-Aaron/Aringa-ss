@@ -8,13 +8,12 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import Gallery from './components/gallery'
 import Testimonials from './components/testimonials'
-import SocialLinks from './components/social-links'
-import { MapPin, Phone, Mail } from 'lucide-react'
+
 
 const images = [
-  { src: '/students.jpg?height=600&width=1200&text=School+Building', alt: 'Aringa Secondary School Building' },
-  { src: '/students3.jpg?height=600&width=1200&text=Students+in+Class', alt: 'Students in a classroom' },
-  { src: '/students2.jpg?height=600&width=1200&text=Sports+Field', alt: 'School sports field' },
+  { src: '/prefects.jpg?height=600&width=1200&text=School+Building', alt: 'Aringa Secondary School Building' },
+  { src: '/students.jpg?height=600&width=1200&text=Students+in+Class', alt: 'Students in a classroom' },
+  { src: '/tycondo.png?height=600&width=1200&text=Sports+Field', alt: 'School sports field' },
 ]
 
 export default function Home() {
@@ -219,75 +218,33 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <Testimonials />
-
-      {/* Contact Section */}
-      <section id="contact" className="bg-white py-20">
-        <div className="container mx-auto px-4">
+      {/* CTA Section */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="bg-primary text-primary-foreground py-20"
+      >
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">Interested in Joining Aringa Secondary School?</h2>
+          <p className="text-xl mb-8">Contact us to learn more about our application process and how you can become part of Aringa Secondary School.</p>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
-            <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-            <p className="text-xl text-muted-foreground">Get in touch with Aringa Secondary School</p>
+            
+            <Button 
+              asChild 
+              size="lg" 
+              variant="secondary" 
+              className="text-white bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 rounded-lg shadow-lg hover:from-purple-500 hover:to-blue-500 hover:scale-105 transform transition duration-300 ease-in-out">
+              <Link href="/contact">Contact Us</Link>
+            </Button>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
-              <div className="flex items-start mb-2">
-                <MapPin className="mr-2 mt-1 text-primary" />
-                <p>P.O BOX 23, Yumbe, Uganda</p>
-              </div>
-              <div className="flex items-center mb-2">
-                <Phone className="mr-2 text-primary" />
-                <p>Phone: +256 782 107336</p>
-              </div>
-              <div className="flex items-center mb-2">
-                <Mail className="mr-2 text-primary" />
-                <p>Email: aringasecondaryschool@yahoo.com</p>
-              </div>
-              <h3 className="text-2xl font-bold mt-8 mb-4">Office Hours</h3>
-              <p className="mb-2">Monday - Friday: 8:00 AM - 4:00 PM</p>
-              <p className="mb-2">Saturday: 9:00 AM - 12:00 PM</p>
-              <p>Sunday: Closed</p>
-              <SocialLinks />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block mb-2">Name</label>
-                  <input type="text" id="name" name="name" className="w-full p-2 border rounded" required />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block mb-2">Email</label>
-                  <input type="email" id="email" name="email" className="w-full p-2 border rounded" required />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block mb-2">Message</label>
-                  <textarea id="message" name="message" rows={4} className="w-full p-2 border rounded" required></textarea>
-                </div>
-                <Button 
-                  type="submit" 
-                  className="text-white bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 rounded-lg shadow-lg hover:from-purple-500 hover:to-blue-500 hover:scale-105 transform transition duration-300 ease-in-out"
-                  style={{ backgroundColor: '#3498db', color: 'white', borderRadius: '8px' }}
->
-                  Send Message
-                </Button>
-              </form>
-            </motion.div>
-          </div>
         </div>
-      </section>
+      </motion.section>
+
+      
     </div>
   )
 }
-

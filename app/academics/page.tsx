@@ -61,9 +61,8 @@ const topStudents = [
   { name: "John Doe", class: "Senior One", photo: "/placeholder.svg?height=150&width=150&text=John", color: "Red" },
   { name: "Jane Smith", class: "Senior Two", photo: "/placeholder.svg?height=150&width=150&text=Jane", color: "Blue" },
   { name: "Alice Johnson", class: "Senior Three", photo: "/placeholder.svg?height=150&width=150&text=Alice", color: "Green" },
-  { name: "Bob Williams", class: "Senior Four", photo: "/placeholder.svg?height=150&width=150&text=Bob", color: "Yellow" },
-  { name: "Eva Brown", class: "Senior Five", photo: "/placeholder.svg?height=150&width=150&text=Eva", color: "Purple" },
-  { name: "Michael Davis", class: "Senior Six", photo: "/placeholder.svg?height=150&width=150&text=Michael", color: "Orange" },
+  { name: "Bob Williams", class: "Senior Five (Sci)", photo: "/placeholder.svg?height=150&width=150&text=Bob", color: "Yellow" },
+  { name: "Eva Brown", class: "Senior Five (Arts)", photo: "/placeholder.svg?height=150&width=150&text=Eva", color: "Green" },
 ]
 
 const testimonials = [
@@ -74,9 +73,9 @@ const testimonials = [
     content: 'Aringa Secondary School has provided an excellent education for my child. The teachers are dedicated and the facilities are top-notch.',
   },
   {
-    name: 'Lema Aaron',
+    name: 'Hamim Jibril',
     role: 'Alumni',
-    image: '/Aaron.jpg?height=100&width=100',
+    image: '/jibril.jpg?height=100&width=100',
     content: 'My years at Aringa Secondary School prepared me well for university and beyond. I\'m grateful for the strong foundation I received here.',
   },
   {

@@ -16,9 +16,9 @@ const newsAndEvents = [
     id: 2,
     title: "Parent-Teacher Conference",
     content: "We invite all parents to attend our bi-annual parent-teacher conference. This is a valuable opportunity to discuss your child's academic progress, social development, and any concerns you may have. Our dedicated teachers will be available to provide detailed insights into your child's performance and offer strategies for continued success. We believe in the power of strong home-school partnerships, and these conferences play a crucial role in fostering that connection. Please book your time slots in advance to ensure you can meet with all relevant teachers.",
-    date: "2023-06-05",
+    date: "2025-06-05",
     category: "Event",
-    image: "/images/parent-teacher-conference.jpg"
+    image: "/career.jpg"
   },
   {
     id: 3,
@@ -42,8 +42,8 @@ export default function EventPage({ params }: { params: { id: string } }) {
       <Image
         src={event.image}
         alt={event.title}
-        layout="fill"
-        objectFit="cover"
+        fill
+        style={{ objectFit: "cover" }}
         className="z-0"
       />
       <div className="z-10 bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-2xl w-full">

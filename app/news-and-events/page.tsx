@@ -35,8 +35,8 @@ export default function NewsAndEventsPage() {
       <Image
         src="/patriotism.jpg?height=1080&width=1920&text=News+and+Events+Background"
         alt="News and Events Background"
-        layout="fill"
-        objectFit="cover"
+        fill
+        style={{ objectFit: "cover" }}
         quality={100}
         className="z-0"
       />

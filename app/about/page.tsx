@@ -89,47 +89,47 @@ const FloatingIcon: FC<FloatingIconProps> = ({ icon: Icon }) => {
 
 const staffMembers = [
   { 
-    name: "Dr. Sarah Namukasa", 
-    position: "Principal", 
-    image: "/placeholder.svg?height=200&width=200&text=Dr.+Sarah",
+    name: "Mr. Atiku Ratib Abas", 
+    position: "Head Teacher", 
+    image: "/headteacher.jpg?height=200&width=200&text=Dr.+Sarah",
     email: "sarah.namukasa@aringasecondary.edu",
     phone: "+256 700 123 456",
-    bio: "Dr. Namukasa has over 20 years of experience in education and holds a Ph.D. in Educational Leadership."
+    bio: "Mr. Atiku Ratib Abas serves as the Head Teacher of Aringa Secondary School, providing visionary leadership to guide the institution towards academic excellence and holistic student development. With extensive experience in educational management, Mr. Atiku is committed to fostering a culture of discipline, innovation, and success."
   },
   { 
-    name: "Mr. John Okello", 
-    position: "Vice Principal, Academics", 
-    image: "/placeholder.svg?height=200&width=200&text=Mr.+John",
+    name: "Mr. Angoziga Adinan", 
+    position: "Deputy Head Teacher, Adminstration", 
+    image: "/deputyadmin.jpg?height=200&width=200&text=Mr.+John",
     email: "john.okello@aringasecondary.edu",
     phone: "+256 700 234 567",
-    bio: "Mr. Okello specializes in curriculum development and has been with Aringa Secondary School for 15 years."
+    bio: "Mr. Angoziga Adinan serves as the Deputy Head Teacher in charge of Administration at Aringa Secondary School. With a wealth of experience in school management and operations, he ensures the smooth and efficient functioning of the institution’s administrative affairs. Mr. Angoziga is dedicated to creating an organized and supportive environment for both staff and students."
   },
   { 
-    name: "Ms. Grace Atim", 
-    position: "Head of Sciences", 
-    image: "/placeholder.svg?height=200&width=200&text=Ms.+Grace",
+    name: "Mr. Zubair Khemis", 
+    position: "Deputy Head Teacher, Academics", 
+    image: "/deputyacademics.jpg?height=200&width=200&text=Ms.+Grace",
     email: "grace.atim@aringasecondary.edu",
     phone: "+256 700 345 678",
-    bio: "Ms. Atim is a passionate advocate for STEM education and has led our science department to national recognition."
+    bio: "Mr. Zubair Khemis serves as the Deputy Head Teacher in charge of Academics at Aringa Secondary School. With a strong background in curriculum planning and instructional leadership, he is committed to maintaining high academic standards and fostering a culture of excellence among students and teachers."
   },
   { 
-    name: "Mr. David Ochieng", 
-    position: "Head of Humanities", 
-    image: "/placeholder.svg?height=200&width=200&text=Mr.+David",
+    name: "Mr. Abele Adnan", 
+    position: "The Director Of Studies", 
+    image: "/dos.jpg?height=200&width=200&text=Mr.+David",
     email: "david.ochieng@aringasecondary.edu",
     phone: "+256 700 456 789",
-    bio: "Mr. Ochieng brings a wealth of experience in literature and history, inspiring students to think critically about the world."
+    bio: "Mr. Abele Adinan serves as the Director of Studies at Aringa Secondary School. He oversees the academic scheduling, examinations, and teacher coordination, ensuring that the school’s educational goals are met. With a dedication to student success and academic excellence, Mr. Abele plays a vital role in shaping the institution’s academic direction."
   },
   { 
-    name: "Mrs. Elizabeth Nakato", 
-    position: "Head of Mathematics", 
-    image: "/placeholder.svg?height=200&width=200&text=Mrs.+Elizabeth",
+    name: "Mr. Adriko Nelson", 
+    position: "The School Bursar", 
+    image: "/burzar.jpg?height=200&width=200&text=Mrs.+Elizabeth",
     email: "elizabeth.nakato@aringasecondary.edu",
     phone: "+256 700 567 890",
-    bio: "Mrs. Nakato has a knack for making complex mathematical concepts accessible and engaging for all students."
+    bio: "Mr. Adriko Nelson serves as the School Bursar at Aringa Secondary School, managing the institution’s financial operations with integrity and efficiency. With expertise in financial management and a commitment to transparency, he ensures the proper allocation and accountability of the school’s resources."
   },
   { 
-    name: "Mr. Peter Ssemakula", 
+    name: "Mr. Origina Ssemakula", 
     position: "Head of Languages", 
     image: "/placeholder.svg?height=200&width=200&text=Mr.+Peter",
     email: "peter.ssemakula@aringasecondary.edu",
@@ -137,12 +137,12 @@ const staffMembers = [
     bio: "Mr. Ssemakula is fluent in five languages and leads our robust language programs, including English, Swahili, and French."
   },
   { 
-    name: "Ms. Fatima Abdu", 
-    position: "Dean of Students", 
-    image: "/placeholder.svg?height=200&width=200&text=Ms.+Fatima",
+    name: "Mr. Orijabo Saidi", 
+    position: "Senior Man Teacher", 
+    image: "/saidi.jpg?height=200&width=200&text=Ms.+Fatima",
     email: "fatima.abdu@aringasecondary.edu",
     phone: "+256 700 789 012",
-    bio: "Ms. Abdu oversees student welfare and extracurricular activities, ensuring a holistic educational experience for all learners."
+    bio: "Mr. Orijabo Saidi serves as the Senior Man Teacher at Aringa Secondary School. He plays a pivotal role in guiding and mentoring male students, fostering discipline, and addressing their academic and personal development needs. With a dedication to student welfare and success, Mr. Orijabo contributes significantly to the school’s supportive learning environment."
   },
   { 
     name: "Mr. Robert Kizza", 
@@ -199,8 +199,8 @@ export default function AboutPage() {
         <Image
           src="/sports.jpg?height=1080&width=1920&text=Aringa+Secondary+School"
           alt="Aringa Secondary School Campus"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           priority
         />
         <motion.div 
@@ -325,8 +325,8 @@ export default function AboutPage() {
                   <Image
                     src="/studentsInClass.jpg?height=400&width=600&text=Students+in+Class"
                     alt="Students in a classroom"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: "cover" }}
                     className="rounded-lg"
                   />
                 </div>
@@ -408,8 +408,8 @@ export default function AboutPage() {
                       <Image
                         src={staff.image}
                         alt={staff.name}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{ objectFit: "cover" }}
                         className="rounded-full transition-transform duration-300 hover:scale-105"
                       />
                     </div>

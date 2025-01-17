@@ -12,15 +12,15 @@ const testimonials = [
     content: 'Aringa Secondary School has provided an excellent education for my child. The teachers are dedicated and the facilities are top-notch.',
   },
   {
-    name: 'Lema Aaron',
+    name: 'Hamim Jibril',
     role: 'Alumni',
-    image: '/Aaron.jpg?height=100&width=100',
+    image: '/jibril.jpg?height=100&width=100',
     content: 'My years at Aringa Secondary School prepared me well for university and beyond. I\'m grateful for the strong foundation I received here.',
   },
   {
-    name: 'David Johnson',
+    name: 'Hope Sharon',
     role: 'Current Student',
-    image: '/placeholder.svg?height=100&width=100',
+    image: '/sharon.jpg?height=100&width=100',
     content: 'I love the diverse range of activities and clubs available at Aringa. It\'s helped me discover new interests and make great friends.',
   },
 ]

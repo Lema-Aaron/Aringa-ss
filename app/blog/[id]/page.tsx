@@ -39,8 +39,8 @@ export default function BlogPost({ params }: { params: { id: string } }) {
       <Image
         src={post.image}
         alt={post.title}
-        layout="fill"
-        objectFit="cover"
+        fill
+        style={{ objectFit: "cover" }}
         className="z-0"
       />
       <div className="z-10 bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-2xl w-full">

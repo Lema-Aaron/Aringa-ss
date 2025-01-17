@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { FadeIn, ScaleIn } from '@/components/animations'
 
-// This would typically come from a database or CMS
+
 const blogPosts = [
   {
     id: 1,
@@ -33,8 +33,8 @@ export default function BlogPage() {
       <Image
         src="/sports.jpg?height=1080&width=1920&text=Blog+Background"
         alt="Blog Background"
-        layout="fill"
-        objectFit="cover"
+        fill
+        style={{ objectFit: "cover" }}
         quality={100}
         className="z-0"
       />

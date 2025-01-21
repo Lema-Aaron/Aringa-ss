@@ -12,10 +12,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { BookOpen, Users, Trophy, GraduationCap, Clock, MapPin, Mail, Phone, Heart, Star, Sun } from 'lucide-react'
 
-// Define the types for props explicitly
 type FadeInWhenVisibleProps = {
-  children: React.ReactNode; // This will type children properly
-  delay?: number; // Optional delay prop, default is 0
+  children: React.ReactNode; 
+  delay?: number; 
 };
 
 const FadeInWhenVisible: React.FC<FadeInWhenVisibleProps> = ({ children, delay = 0 }) => {
@@ -129,9 +128,9 @@ const staffMembers = [
     bio: "Mr. Adriko Nelson serves as the School Bursar at Aringa Secondary School, managing the institution’s financial operations with integrity and efficiency. With expertise in financial management and a commitment to transparency, he ensures the proper allocation and accountability of the school’s resources."
   },
   { 
-    name: "Mr. Origina Ssemakula", 
-    position: "Head of Languages", 
-    image: "/placeholder.svg?height=200&width=200&text=Mr.+Peter",
+    name: "Mrs. Candiru Zainab", 
+    position: "Senior Woman Teacher", 
+    image: "/female.jpg?height=200&width=200&text=Mr.+Peter",
     email: "peter.ssemakula@aringasecondary.edu",
     phone: "+256 700 678 901",
     bio: "Mr. Ssemakula is fluent in five languages and leads our robust language programs, including English, Swahili, and French."

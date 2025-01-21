@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -43,8 +43,8 @@ export default function Home() {
             <Image
               src={images[currentImageIndex].src}
               alt={images[currentImageIndex].alt}
-              fill
-              style={{ objectFit: "cover" }}
+              layout="fill"
+              objectFit="cover"
               quality={100}
               priority
             />

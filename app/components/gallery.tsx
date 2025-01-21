@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 const images = [
   { src: '/schoolBuilding.jpg?height=400&width=600', alt: 'School building' },

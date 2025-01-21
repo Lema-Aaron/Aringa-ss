@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -44,9 +44,9 @@ const departments = [
   },
   {
     name: 'Technology',
-    description: 'Develop skills for the digital age with our cutting-edge technology courses.',
+    description: 'Develop skills for the digital age with our cutting-edge technology subjects.',
     icon: Code,
-    subjects: ['Computer Literacy', 'Information Technology']
+    subjects: ['Computer Literacy']
   }
 ]
 
@@ -141,8 +141,8 @@ export default function AcademicsPage() {
     <Image
       src="/academics.jpg?height=1080&width=1920&text=Aringa+Secondary+School"
       alt="Aringa Secondary School Building"
-      fill
-      style={{ objectFit: "cover" }}
+      layout="fill"
+      objectFit="cover"
       priority
     />
     <div className="absolute inset-0 bg-black opacity-50"></div>

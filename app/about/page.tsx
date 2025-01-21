@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Link from 'next/link'
 import { FC } from 'react';
 import { LucideProps } from 'lucide-react';
@@ -199,8 +199,8 @@ export default function AboutPage() {
         <Image
           src="/sports.jpg?height=1080&width=1920&text=Aringa+Secondary+School"
           alt="Aringa Secondary School Campus"
-          fill
-          style={{ objectFit: "cover" }}
+          layout="fill"
+          objectFit="cover"
           priority
         />
         <motion.div 
@@ -325,8 +325,8 @@ export default function AboutPage() {
                   <Image
                     src="/studentsInClass.jpg?height=400&width=600&text=Students+in+Class"
                     alt="Students in a classroom"
-                    fill
-                    style={{ objectFit: "cover" }}
+                    layout="fill"
+                    objectFit="cover"
                     className="rounded-lg"
                   />
                 </div>
@@ -408,8 +408,8 @@ export default function AboutPage() {
                       <Image
                         src={staff.image}
                         alt={staff.name}
-                        fill
-                        style={{ objectFit: "cover" }}
+                        layout="fill"
+                        objectFit="cover"
                         className="rounded-full transition-transform duration-300 hover:scale-105"
                       />
                     </div>

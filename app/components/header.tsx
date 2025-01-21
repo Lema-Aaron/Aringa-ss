@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)

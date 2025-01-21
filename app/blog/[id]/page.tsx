@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 const blogPosts = [
   {
@@ -39,8 +39,8 @@ export default function BlogPost({ params }: { params: { id: string } }) {
       <Image
         src={post.image}
         alt={post.title}
-        fill
-        style={{ objectFit: "cover" }}
+        layout = "fill"
+        objectFit="cover"
         className="z-0"
       />
       <div className="z-10 bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-2xl w-full">

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { FadeIn, ScaleIn } from '@/components/animations'
 
@@ -33,8 +33,8 @@ export default function BlogPage() {
       <Image
         src="/sports.jpg?height=1080&width=1920&text=Blog+Background"
         alt="Blog Background"
-        fill
-        style={{ objectFit: "cover" }}
+        layout="fill"
+        objectFit="cover"
         quality={100}
         className="z-0"
       />

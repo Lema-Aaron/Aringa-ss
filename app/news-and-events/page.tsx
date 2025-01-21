@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { FadeIn, ScaleIn, ParallaxScroll } from '@/components/animations'
 
@@ -35,8 +35,8 @@ export default function NewsAndEventsPage() {
       <Image
         src="/patriotism.jpg?height=1080&width=1920&text=News+and+Events+Background"
         alt="News and Events Background"
-        fill
-        style={{ objectFit: "cover" }}
+        layout="fill"
+        objectFit="cover"
         quality={100}
         className="z-0"
       />
